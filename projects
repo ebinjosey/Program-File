@@ -1,0 +1,37 @@
+# WAP to create user-input list and separate odd and even into separate lists 
+
+lst = []
+o = []
+e = []
+
+n=int(input("Enter the no. of elements:"))
+
+for i in range(0,n):
+    ele=int(input("Enter element:"))
+    lst.append(ele)
+
+for i in lst:
+    if i%2==0:
+        e.append(i)
+
+    else:
+        o.append(i)
+
+print("Elements that are odd are:", o)
+print("Elements that are even are:", e)
+
+
+
+# WAP to swap first and last elements of a list
+
+lst=[]
+n=int(input("Enter number of elements:"))
+
+for i in range (0,n):
+    ele=int(input("Enter your elements:"))
+    lst.append(ele)
+
+lst[0],lst[-1]=lst[-1],lst[0]
+
+print(lst)
+
