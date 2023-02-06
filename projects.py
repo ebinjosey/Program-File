@@ -1,6 +1,35 @@
 import math
 import random
 
+# To check if your number is a prime or composite
+
+n = int(input("Enter your number"))
+
+if n > 1:
+    for i in range(2,n):
+        if n%i==0:
+            print("Your number is not a prime number.")
+            break
+
+        else:
+            print("Your number is a prime number.")
+            break
+
+elif n == 0 or 1:
+    print("Your number is neither prime nor composite")
+    
+# 8 WAP to generate fibonacci sequence
+
+n = int(input("Enter no. of terms for Fibonacci sequence:"))
+fibonacci=[]
+a,b=0,1
+for i in range(n):
+    fibonacci.append(a)
+    a,b=b,a+b
+
+print("The first", n, "terms of the Fibonacci sequence are:", (fibonacci))
+
+
 # 12 WAP to create user-input list and separate odd and even into separate lists 
 
 lst = []
