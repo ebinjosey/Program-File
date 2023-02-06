@@ -131,6 +131,24 @@ for k in range(len(lst)):
     
     if(Found == False):
         print(x,"is not found in the list")
+
+# or 
+
+a = []
+n = int(input('Enter the number of elements: '))
+for i in range(0,n):
+    b = int(input('Enter the elements: '))
+    a.append(b)
+    
+x = int(input('Enter the number to be searched: '))
+for i in a:
+    if i == x:
+        print('The number is present at index', a.index(i))
+        break
+    else:
+        print(x, "is not in the list")
+        break
+
         
 # 18 Packing and Unpacking of a Tuple
 
@@ -253,6 +271,65 @@ while True:
 
     else:
         print("Invalid Choice")
+        
+# or 
+
+dic={}
+name_lst=[]
+empno_lst=[]
+
+
+while True:
+    print('''Choose from one of the following:
+1. Add Employee Details
+2. Show all Employee Details
+3. Update an employee's salary
+4. Search an employee
+5. Quit''')
+
+    choice=int(input("Enter your choice:"))
+
+    if choice==1:
+        name=input("Enter the employee's name:")
+        salary=int(input("Enter the employee's salary:"))
+        empno=int(input("Enter the employee's numbeer:"))
+        dic.update({name:salary})
+        name_lst.append(name)
+        empno_lst.append(empno)
+        print('\n')
+
+    elif choice==2:
+        print("**********EMPLOYEE DETAILS**********")
+        for i in range(len(name_lst)):
+            print("Name:", name_lst[i])
+            print("Salary:", dic[name_lst[i]])
+            print("Employee Number:", empno_lst[i])
+            print('\n')
+
+    elif choice==3:
+        name=input("Enter the name of employee you want to update:")
+        if name in name_lst:
+            salary=int(input("Enter updated salary:"))
+            dic.update({name:salary})
+            print("Employee Updated")
+            print('\n')
+
+        else:
+            print("Employee not found")
+            print('\n')
+
+    elif choice==4:
+        name_search=input("Enter the name of the employee you want to searchL:")
+        print("Salary:", dic[name_search])
+        print('\n')
+
+    elif choice==5:
+        break
+
+    else:
+        print("Invalid choice! Please choose again.")
+        print('\n')
+
         
 # 26 WAP to create a menu driven dictionary for storing phonebook names and number and access them
         
